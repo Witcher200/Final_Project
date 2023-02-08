@@ -34,7 +34,11 @@ public class Section_GameTest extends AbstractPageTest{
 			Click_on_the_ShowAll_button.click();
 
 			//Клик на игру
-			WebElement Click_on_game = getWebDriver().findElement(By.xpath("//div[text()=\"Отряд Сакура\"]"));
+			WebElement Click_on_game = getWebDriver().findElement(By.xpath("//div[@id=\"app_card_3213078\"]/div[1]/a"));
 			Click_on_game.click();
+
+			//Клик на кнопку
+			WebElement click_on_btn = getWebDriver().findElement(By.xpath("//button[@id=\"apps_i_btn\"]"));
+			click_on_btn.click();
 	  }
 }

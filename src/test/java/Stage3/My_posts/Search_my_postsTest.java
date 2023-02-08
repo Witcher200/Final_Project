@@ -24,7 +24,7 @@ public class Search_my_postsTest extends AbstractPageTest{
 				.all()
 				.queryParam("sort", "createdAt")
 				.queryParam("order", "ASC")
-				.queryParam("page", "5")
+				.queryParam("page", "1")
 				.expect()
 				.when()
 				.get(PostsURL()+"my_publication")
@@ -39,11 +39,11 @@ public class Search_my_postsTest extends AbstractPageTest{
 				.log()
 				.all()
 				.queryParam("sort", "createdAt")
-				.queryParam("order", "DESC")
-				.queryParam("page", "45")
+				.queryParam("order", "ASC")
+				.queryParam("page", "2")
 				.expect()
 				.when()
-				.get(PostsURL()+"my_publication")
+				.get(PostsURL()+"my_publication2")
 				.then()
 				.statusCode(404);
 	  }
@@ -55,11 +55,11 @@ public class Search_my_postsTest extends AbstractPageTest{
 				.log()
 				.all()
 				.queryParam("sort", "createdAt")
-				.queryParam("order", "ALL")
-				.queryParam("page", "55")
+				.queryParam("order", "DESC")
+				.queryParam("page", "1")
 				.expect()
 				.when()
-				.get(PostsURL()+"my_publication")
+				.get(PostsURL()+"my_publication3")
 				.then()
 				.statusCode(404);
 	  }

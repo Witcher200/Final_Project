@@ -21,13 +21,12 @@ public class LoginTest extends AbstractPageTest {
 			given()
 				.log()
 				.all()
-				.queryParam("query", "autotest")
-				.queryParam("page", 1)
+				.queryParam("query", "28022023")
 				.expect()
 				.when()
-				.post(getloginURL()+"Enter_username")
+				.post(getloginURL())
 				.then()
-				.statusCode(404);
+				.statusCode(200);
 	  }
 
 	  @Test
@@ -36,13 +35,12 @@ public class LoginTest extends AbstractPageTest {
 			given()
 				.log()
 				.all()
-				.queryParam("query", "4956318935")
-				.queryParam("page", 1)
+				.queryParam("query", "2be9e97498")
 				.expect()
 				.when()
-				.get(getloginURL()+"Enter_password")
+				.get(getloginURL())
 				.then()
-				.statusCode(404);
+				.statusCode(200);
 	  }
 
 	  @Test
@@ -52,11 +50,10 @@ public class LoginTest extends AbstractPageTest {
 				.log()
 				.all()
 				.queryParam("query", "click")
-				.queryParam("page", 1)
 				.expect()
 				.when()
-				.post(getloginURL()+"Click_on_login")
+				.post(getloginURL())
 				.then()
-				.statusCode(404);
+				.statusCode(200);
 	  }
 }

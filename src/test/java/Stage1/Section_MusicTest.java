@@ -38,7 +38,11 @@ public class Section_MusicTest extends AbstractPageTest{
 			Click_to_music_in_the_New_section.click();
 
 			//Клик в поле "Поиск музыки" и ввод поискового запроса "Дискотека авария"
-			WebElement Click_in_the_Search_of_music_field = getWebDriver().findElement(By.xpath("//div[@class=\"audio_search_wrapper audio_search_wrapper_new\"]/div/div/div/form/input"));
-			Click_in_the_Search_of_music_field.click();
+			WebElement Click_in_the_Search_of_music_field = getWebDriver().findElement(By.xpath("//input[@id=\"audio_search\"]"));
+			Click_in_the_Search_of_music_field.sendKeys("Дискотека авария");
+
+			//Клик на иконку "Лупа"
+			WebElement Click_on_search = getWebDriver().findElement(By.xpath("//div[@id=\"content\"]/div/div[3]/div[1]/div/div/div[1]/button"));
+			Click_on_search.click();
 	  }
 }

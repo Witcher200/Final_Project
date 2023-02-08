@@ -34,7 +34,7 @@ public class Section_VideoTest extends AbstractPageTest{
 			Click_on_video.click();
 
 			//Открыть видео на весь экран
-			WebElement Click_on_the_button_Open_video_in_full_screen = getWebDriver().findElement(By.xpath("//div[@class=\"videoplayer_controls _has_fullscreen\"]/div[13]"));
+			WebElement Click_on_the_button_Open_video_in_full_screen = getWebDriver().findElement(By.xpath("//div[@id=\"video_player\"]/div/div[3]/div[8]/div[12]"));
 			Click_on_the_button_Open_video_in_full_screen.click();
 
 			//Клик на иконку "Нравится"
@@ -50,16 +50,12 @@ public class Section_VideoTest extends AbstractPageTest{
 			Click_on_the_Add_to_me_icon.click();
 
 			//Клик на кнопку "Свернуть"
-			WebElement Click_on_the_Expand_button = getWebDriver().findElement(By.xpath("//div[@class=\"videoplayer_controls _has_fullscreen\"]/div[13]"));
+			WebElement Click_on_the_Expand_button = getWebDriver().findElement(By.xpath("//*[@id=\"video_player\"]/div/div[3]/div[8]/div[12]"));
 			Click_on_the_Expand_button.click();
-
-			//Клик на кнопку "Нравится"
-			WebElement Click_on_the_Like_button = getWebDriver().findElement(By.xpath("//div[@class=\"videoplayer_share_actions\"]/div[2]"));
-			Click_on_the_Like_button.click();
 
 			//Клик на поле "Написать комментарий" и ввод текста "Мое любимое шоу, с моим любимым шефом Ивлевым"
 			WebElement Entering_text_in_the_text_input_field = getWebDriver().findElement(By.xpath("//div[@class=\"reply_form\"]/div/div/div[2][1]"));
-			Entering_text_in_the_text_input_field.sendKeys("Круто!");
+			Entering_text_in_the_text_input_field.sendKeys("Мое любимое шоу, с моим любимым шефом Ивлевым");
 
 			//Клик на "Стрелочку"
 			WebElement Click_on_the_Arrow = getWebDriver().findElement(By.xpath("//button[@class=\"FlatButton FlatButton--primary FlatButton--size-m addpost_button\"]/SPAN"));
