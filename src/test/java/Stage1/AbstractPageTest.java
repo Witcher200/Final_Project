@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class  AbstractPageTest {
+public class AbstractPageTest {
 
 	  static EventFiringWebDriver eventDriver;
 
@@ -32,7 +32,7 @@ public class  AbstractPageTest {
 
 	  @BeforeEach
 	  void initMainPage(){
-			Assertions.assertDoesNotThrow( ()-> eventDriver.navigate().to("https://vk.com/"),
+			Assertions.assertDoesNotThrow( ()-> eventDriver.navigate().to("https://test-stand.gb.ru/"),
 				"Страница недоступна");
 			Assertions.assertTrue(true);
 	  }
