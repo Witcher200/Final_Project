@@ -26,8 +26,8 @@ public class Login_User1Test extends AbstractPageTest{
 				.queryParam("password", "2be9e97498")
 				.expect()
 				.when()
-				.post(getLoginURL()+"Login_User1")
+				.post(getLoginURL())
 				.then()
-				.statusCode(404);
+				.statusCode(200);
 	  }
 }

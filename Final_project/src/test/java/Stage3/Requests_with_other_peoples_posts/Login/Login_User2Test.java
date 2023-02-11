@@ -26,8 +26,8 @@ public class Login_User2Test extends AbstractPageTest{
 				.queryParam("password", "n293DY21l")
 				.expect()
 				.when()
-				.post(getLogin_with_wrong_credURL()+"Login_with_wrong_credURL")
+				.post(getLogin_with_wrong_credURL())
 				.then()
-				.statusCode(404);
+				.statusCode(400);
 	  }
 }
