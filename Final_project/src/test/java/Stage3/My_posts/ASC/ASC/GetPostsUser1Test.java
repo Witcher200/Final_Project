@@ -1,6 +1,9 @@
 package Stage3.My_posts.ASC.ASC;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.ResponseBody;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -20,53 +23,85 @@ public class GetPostsUser1Test extends AbstractPageTest {
 	  @Order(1)
 
 	  void GetPosts_User1Test() {
-			System.out.println( getToken());
-			given()
-				.log()
-				.all()
-				.queryParam("sort", "createdAt")
-				.queryParam("order", "ASC")
-				.queryParam("page", 1)
-				.headers("Accept","*/*")
-				.headers("X-Auth-Token", getToken())
-				.expect()
-				.when()
-				.get(getPostsURL())
-				.then()
-				.statusCode(200);
-	  }
+			ResponseBody body = given()
+				  .log()
+				  .all()
+				  .queryParam("sort", "createdAt")
+				  .queryParam("order", "ASC")
+				  .queryParam("page", 1)
+				  .headers("X-Auth-Token", getToken())
+				  .expect().statusCode(200)
+				  .when()
+				  .get(getPostsURL()).getBody();
+
+			System.out.println("Response Body is: " + body.asString());
+			Assertions.assertEquals(body.asString().contains("authorId\":4520"), true);
+
+			JsonPath jsonPathEvaluator = body.jsonPath();
+			Integer nextPage = jsonPathEvaluator.get("meta.nextPage");
+			Assertions.assertEquals(2, nextPage);
+
+			//Проверяем что id автора = 4520
+			Integer a = jsonPathEvaluator.get("data[0].authorId");
+			System.out.println(a);
+			Assertions.assertEquals(4520, a);
+
+			Integer b = jsonPathEvaluator.get("meta.count");
+			System.out.println(b);
+			Assertions.assertTrue(b >10 | b < 100);
+
+			//Проверяем что сортировка ASC
+			Integer id0 = jsonPathEvaluator.get("data[0].id");
+		  	Integer id1 = jsonPathEvaluator.get("data[1].id");
+			System.out.println(id0);
+			System.out.println(id1);
+
+			Assertions.assertTrue(id0 < id1);
+			}
+
 
 	  @Test
 	  @Order(2)
 	  void GetPosts_User1_CopyTest() {
-			given()
+			ResponseBody body = given()
 				.log()
 				.all()
 				.queryParam("sort", "createdAt")
 				.queryParam("order", "ASC")
 				.queryParam("page", 2)
 				.headers("X-Auth-Token", getToken())
-				.expect()
+				.expect().statusCode(200)
 				.when()
-				.get(getPostsURL())
-				.then()
-				.statusCode(200);
+				.get(getPostsURL()).getBody();
+
+			System.out.println("Response Body is: " + body.asString());
+			Assertions.assertEquals(body.asString().contains("authorId\":4520"), true);
+
+			JsonPath jsonPathEvaluator = body.jsonPath();
+			Integer nextPage = jsonPathEvaluator.get("meta.nextPage");
+			Assertions.assertEquals(3, nextPage);
 	  }
 
 	  @Test
 	  @Order(3)
 	  void GetPosts_User1not_existsTest() {
-			given()
+			ResponseBody body = given()
 				.log()
 				.all()
 				.queryParam("sort", "createdAt")
 				.queryParam("order", "ASC")
 				.queryParam("page", 10)
 				.headers("X-Auth-Token", getToken())
-				.expect()
+				.expect().statusCode(200)
 				.when()
-				.get(getPostsURL())
-				.then()
-				.statusCode(200);
+				.get(getPostsURL()).getBody();
+
+			System.out.println("Response Body is: " + body.asString());
+			Assertions.assertEquals(body.asString().contains("data\":[]"), true);
+
+			JsonPath jsonPathEvaluator = body.jsonPath();
+			Integer nextPage = jsonPathEvaluator.get("meta.nextPage");
+			Assertions.assertEquals(null, nextPage);
+;
 	  }
 }

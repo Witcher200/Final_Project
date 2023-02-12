@@ -30,6 +30,6 @@ public class Login_User1NegativeTest extends AbstractPageTest{
 				.when()
 				.post(getLoginURL())
 				.then()
-				.statusCode(200);
+				.statusCode(400);
 	  }
 }
