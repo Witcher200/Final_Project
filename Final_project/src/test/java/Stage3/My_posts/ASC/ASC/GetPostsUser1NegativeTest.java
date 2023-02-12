@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import static Stage3.My_posts.ASC.DESC.AbstractPageTest.getToken;
+import static io.netty.channel.group.ChannelMatchers.is;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class GetPostsUser1NegativeTest extends AbstractPageTest {
 
@@ -47,8 +49,9 @@ public class GetPostsUser1NegativeTest extends AbstractPageTest {
 				.expect()
 				.when()
 				.get(getPostsURL())
-				.then()
-				.statusCode(200);
+				.then().assertThat().statusCode(200);
+				//and().body("prevPage", equalTo(1));
+			//	.assertThat(.body("meta.prevPage"),1);
 	  }
 
 	  @Test

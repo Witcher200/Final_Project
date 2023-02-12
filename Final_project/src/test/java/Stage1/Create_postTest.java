@@ -43,7 +43,7 @@ public class Create_postTest extends AbstractPageTest {
 
 			//Клик в поле "New image" для добавления изображения
 			WebElement click_in_the_newimage_box = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/form/div/div/div[6]/div/div/label"));
-			click_in_the_newimage_box.click();
+			//click_in_the_newimage_box.click();
 
 			//Клик на кнопку "Save"
 			WebElement click_save_btn = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/form/div/div/div[7]/div/button/span"));

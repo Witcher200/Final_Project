@@ -21,5 +21,6 @@ public class LoginNegativeTest extends AbstractPageTest {
 			//Клик на кнопку "Login"
 			WebElement click_btn_login = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/div/form/div[3]/button"));
 			click_btn_login.click();
+
 	  }
 }

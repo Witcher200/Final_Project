@@ -69,5 +69,4 @@ public class GetPostsUser1Test extends AbstractPageTest {
 				.then()
 				.statusCode(200);
 	  }
-
-	  }
+}

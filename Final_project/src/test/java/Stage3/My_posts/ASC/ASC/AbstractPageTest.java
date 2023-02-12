@@ -12,6 +12,7 @@ public class AbstractPageTest {
 	  static Properties prop = new Properties();
 	  private static String PostsURL;
 	  private static String xToken;
+	  private static String xTokenIncorect;
 
 	  @BeforeAll
 	  static void initTest() throws IOException {
@@ -20,6 +21,7 @@ public class AbstractPageTest {
 
 			PostsURL = prop.getProperty("PostsURL");
 			xToken = prop.getProperty("X_Auth_Token");
+			xTokenIncorect = prop.getProperty("X_Auth_TokenIncorect");
 	  }
 
 	  public static String getPostsURL() {
@@ -28,4 +30,5 @@ public class AbstractPageTest {
 	  public static String getToken() {
 			return xToken;
 	  }
+	  public static String tokenIncorect(){return xTokenIncorect;}
 }
