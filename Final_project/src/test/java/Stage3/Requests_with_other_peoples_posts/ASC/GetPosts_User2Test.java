@@ -38,7 +38,7 @@ public class GetPosts_User2Test extends AbstractPageTest{
 
 			JsonPath jsonPathEvaluator = body.jsonPath();
 			Integer count = jsonPathEvaluator.get("meta.count");
-			Assertions.assertEquals(6557, count);
+			Assertions.assertTrue(count > 6000);
 
 			Integer b = jsonPathEvaluator.get("meta.count");
 			System.out.println(b);

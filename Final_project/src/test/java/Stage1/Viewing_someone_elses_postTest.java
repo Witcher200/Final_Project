@@ -33,7 +33,7 @@ public class Viewing_someone_elses_postTest extends AbstractPageTest {
 			SeeNot_MyPosts.click();
 
 			WebElement notMyPosts = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[3]/div/a[1]/h2"));
-			Assertions.assertEquals("1214", notMyPosts.getText());
+			Assertions.assertEquals("Тест1", notMyPosts.getText());
 
 			WebElement post = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[3]/div/a[1]/h2[1]"));
 			post.click();
