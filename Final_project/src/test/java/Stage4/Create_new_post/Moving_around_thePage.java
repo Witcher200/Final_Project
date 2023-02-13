@@ -1,6 +1,7 @@
 package Stage4.Create_new_post;
 
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -27,13 +28,17 @@ public class Moving_around_thePage extends AbstractPageTest{
 			WebElement Click_on_btn_Login = getWebDriver().findElement(By.xpath("//div[@class=\"container svelte-1pbgeyl\"]/div/div/form/div[3]/button"));
 			Click_on_btn_Login.click();
 
+			WebElement PreviousPage = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[3]/div[2]/div/a[1]"));
+			Assertions.assertEquals("Previous Page", PreviousPage.getText());
+
 			//Клик на кнопку "Next Page"
 			WebElement click_on_nextPage = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[3]/div[2]/div/a[2]"));
 			click_on_nextPage.click();
 
+
 			//Клик на кнопу "Previous Page"
-			WebElement click_on_btn_PreviousPage = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[3]/div[2]/div/a[1]"));
-			click_on_btn_PreviousPage.click();
+			WebElement btn_PreviousPage = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[3]/div[2]/div/a[1]"));
+			btn_PreviousPage.click();
 	  }
 
 }

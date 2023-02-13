@@ -1,5 +1,6 @@
 package Stage1;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -18,8 +19,11 @@ public class LoginTest extends AbstractPageTest {
 			WebElement password_input = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/div/form/div[2]/label/input"));
 			password_input.sendKeys("2be9e97498");
 
+			WebElement copyright = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/footer/div"));
+			Assertions.assertEquals("Copyright ⓒ 2022 . Geekbrains", copyright.getText());
+
 			//Клик на кнопку "Login"
-			WebElement click_btn_login = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/div/form/div[3]/button"));
-			click_btn_login.click();
+			WebElement btn_login = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/div/form/div[3]/button"));
+			btn_login.click();
 	  }
 }

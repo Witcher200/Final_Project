@@ -2,6 +2,7 @@ package Stage4.Limit_values;
 
 
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -16,6 +17,9 @@ public class CornerAuthorization2Test extends AbstractPageTest{
 			//Ввод имени в поле "Username"
 			WebElement Entering_name_in_field_Username = getWebDriver().findElement(By.xpath("//div[@class=\"container svelte-1pbgeyl\"]/div/div/form/div/label[1]"));
 			Entering_name_in_field_Username.sendKeys("28022023");
+
+			WebElement copyright = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/footer/div"));
+			Assertions.assertEquals("Copyright ⓒ 2022 . Geekbrains", copyright.getText());
 
 			//Ввод пароля в поле "Password"
 			WebElement Entering_password_in_field_Password = getWebDriver().findElement(By.xpath("//div[@class=\"container svelte-1pbgeyl\"]/div/div/form/div[2]/label"));

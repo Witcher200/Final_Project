@@ -1,17 +1,20 @@
 package Stage4.Create_new_post;
 
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.concurrent.TimeUnit;
 
 public class Create_postTest extends AbstractPageTest{
 
 	  @Test
 	  @DisplayName("creating_post")
 	  @Description("Создание поста")
-	  void Create_post() {
+	  void Create_post() throws InterruptedException {
 			/***
 			 * Для успешного выполнения этого теста, я добавил сюда регистрацию
 			***/
@@ -30,6 +33,9 @@ public class Create_postTest extends AbstractPageTest{
 			//Клик на иконку "Плюс"
 			WebElement click_on_plus = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div[2]/div/button"));
 			click_on_plus.click();
+
+			WebElement Header = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/h1"));
+			Assertions.assertEquals("Create Post", Header.getText());
 
 			//Ввод заголовка в поле "Title"
 			WebElement enter_title = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/form/div/div/div[1]/div/label"));
@@ -52,7 +58,11 @@ public class Create_postTest extends AbstractPageTest{
 			save_post.click();
 
 			//Переход на главную страницу
-			WebElement click_on_mainPage = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/nav/a"));
-			click_on_mainPage.click();
+			WebElement mainPage = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/nav/a"));
+			mainPage.click();
+
+			TimeUnit.SECONDS.sleep(3);
+			WebElement Header_new = getWebDriver().findElement(By.xpath("//*[@id=\"app\"]/main/div/div[1]/h1"));
+			Assertions.assertEquals("test", Header_new.getText());
 	  }
 }

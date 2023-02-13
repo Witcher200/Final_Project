@@ -18,7 +18,7 @@ public class Login_User2Test extends AbstractPageTest{
 
 	  @Test
 	  @Order(1)
-	  void LoginUser1Test() {
+	  void LoginUser2Test() {
 			given()
 				.log()
 				.all()
