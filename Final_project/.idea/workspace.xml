@@ -84,7 +84,7 @@
       <recent name="Stage3.My_posts.ASC.ASC" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Stage3 in Final_project">
+  <component name="RunManager">
     <configuration name="GetPosts_User2DESCTest.GetPosts3_User2_DESCTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Final_project" />
       <extension name="coverage">
