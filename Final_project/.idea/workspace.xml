@@ -111,22 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetPosts_User2DESCTest.GetPosts_2_User2_DESCTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Final_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Stage3.Requests_with_other_peoples_posts.DESC.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Stage3.Requests_with_other_peoples_posts.DESC" />
-      <option name="MAIN_CLASS_NAME" value="Stage3.Requests_with_other_peoples_posts.DESC.GetPosts_User2DESCTest" />
-      <option name="METHOD_NAME" value="GetPosts_2_User2_DESCTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Stage1 in Final_project (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Final_project" />
       <extension name="coverage">
@@ -157,13 +141,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Stage4 in Final_project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Final_project" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/Stage4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Stage4 in Final_project" />
         <item itemvalue="JUnit.Stage3 in Final_project" />
         <item itemvalue="JUnit.Stage1 in Final_project" />
         <item itemvalue="JUnit.Stage1 in Final_project (1)" />
         <item itemvalue="JUnit.GetPosts_User2DESCTest.GetPosts3_User2_DESCTest" />
-        <item itemvalue="JUnit.GetPosts_User2DESCTest.GetPosts_2_User2_DESCTest" />
       </list>
     </recent_temporary>
   </component>

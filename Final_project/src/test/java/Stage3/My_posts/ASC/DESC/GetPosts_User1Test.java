@@ -40,7 +40,7 @@ public class GetPosts_User1Test extends AbstractPageTest{
 
 			JsonPath jsonPathEvaluator = body.jsonPath();
 			Integer count = jsonPathEvaluator.get("meta.count");
-			Assertions.assertEquals(15, count);
+			Assertions.assertEquals(20, count);
 
 			//Проверяем что id автора = 4520
 			Integer a = jsonPathEvaluator.get("data[0].authorId");
@@ -75,7 +75,7 @@ public class GetPosts_User1Test extends AbstractPageTest{
 
 			JsonPath jsonPathEvaluator = body.jsonPath();
 			String description = jsonPathEvaluator.get("data[1].description");
-			Assertions.assertEquals("I never used this web site", description);
+			Assertions.assertEquals("This is my first Post", description);
 
 	  }
 
