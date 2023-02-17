@@ -7,6 +7,7 @@
     <list default="true" id="8241eb2e-6cea-4185-9407-c91d8765af16" name="Changes" comment="Final_project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage1/Create_postTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage1/Create_postTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Stage1/LoginNegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage1/LoginNegativeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage1/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage1/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage1/Post_previewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage1/Post_previewTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage1/View_created_postTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage1/View_created_postTest.java" afterDir="false" />
@@ -22,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage4/Create_new_post/Moving_around_thePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage4/Create_new_post/Moving_around_thePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage4/Limit_values/CornerAuthorization2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage4/Limit_values/CornerAuthorization2Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Stage4/sign_in/AuthorizationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage4/sign_in/AuthorizationsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Stage4/sign_in/NegativeAuthorizationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Stage4/sign_in/NegativeAuthorizationsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

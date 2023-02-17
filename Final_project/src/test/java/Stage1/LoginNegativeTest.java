@@ -1,5 +1,6 @@
 package Stage1;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -22,5 +23,8 @@ public class LoginNegativeTest extends AbstractPageTest {
 			WebElement click_btn_login = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/div/form/div[3]/button"));
 			click_btn_login.click();
 
+			WebElement  Err = getWebDriver().findElement(By.xpath("//*[@id=\"app\"]/main/div/div/div[2]/h2"));
+			String s = Err.getText();
+			Assertions.assertEquals("401", s);
 	  }
 }

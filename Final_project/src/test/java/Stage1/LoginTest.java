@@ -25,5 +25,8 @@ public class LoginTest extends AbstractPageTest {
 			//Клик на кнопку "Login"
 			WebElement btn_login = getWebDriver().findElement(By.xpath("//div[@id=\"app\"]/main/div/div/div/form/div[3]/button"));
 			btn_login.click();
+
+			WebElement  Hello = getWebDriver().findElement(By.xpath("//*[@id=\"app\"]/main/nav/ul/li[3]/a"));
+			Assertions.assertEquals("Hello, 28022023", Hello.getText());
 	  }
 }

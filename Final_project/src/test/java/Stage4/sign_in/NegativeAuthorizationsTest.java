@@ -1,6 +1,7 @@
 package Stage4.sign_in;
 
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -23,5 +24,10 @@ public class NegativeAuthorizationsTest extends AbstractPageTest {
 			//Клик на кнопку "Login"
 			WebElement Click_on_btn_Login = getWebDriver().findElement(By.xpath("//div[@class=\"container svelte-1pbgeyl\"]/div/div/form/div[3]/button"));
 			Click_on_btn_Login.click();
+
+
+			WebElement  Err = getWebDriver().findElement(By.xpath("//*[@id=\"app\"]/main/div/div/div[2]/h2"));
+			String s = Err.getText();
+			Assertions.assertEquals("401", s);
 	  }
 }
